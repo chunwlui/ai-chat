@@ -6,11 +6,7 @@ const API_URL = "https://aiha.hotvery262.workers.dev";
 const STORAGE_KEY = "ai_chat_history";
 const MAX_HISTORY_MESSAGES = 10;
 
-document.getElementById("clearChat").addEventListener("click", () => {
-  conversationHistory = [];
-  localStorage.removeItem(STORAGE_KEY);
-  displayPreviousMessages();
-});
+
 
 
 let conversationHistory = loadHistory();
@@ -70,6 +66,25 @@ function displayPreviousMessages() {
 }
 
 displayPreviousMessages();
+
+const clearChatButton = document.getElementById("clearChat");
+
+clearChatButton.addEventListener("click", () => {
+  const confirmed = confirm(
+    "Delete all saved messages in this conversation?"
+  );
+
+  if (!confirmed) {
+    return;
+  }
+
+  conversationHistory = [];
+
+  localStorage.removeItem(STORAGE_KEY);
+
+  displayPreviousMessages();
+});
+
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -142,4 +157,5 @@ form.addEventListener("submit", async (event) => {
       "bot"
     );
   }
+ 
 });

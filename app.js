@@ -21,7 +21,7 @@ form.addEventListener("submit", async (event) => {
 
   const question = questionInput.value.trim();
 
-  if (!question) {
+  if (question === "") {
     return;
   }
 

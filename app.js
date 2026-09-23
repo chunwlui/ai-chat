@@ -6,6 +6,13 @@ const API_URL = "https://aiha.hotvery262.workers.dev";
 const STORAGE_KEY = "ai_chat_history";
 const MAX_HISTORY_MESSAGES = 10;
 
+document.getElementById("clearChat").addEventListener("click", () => {
+  conversationHistory = [];
+  localStorage.removeItem(STORAGE_KEY);
+  displayPreviousMessages();
+});
+
+
 let conversationHistory = loadHistory();
 
 function loadHistory() {

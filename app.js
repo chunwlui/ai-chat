@@ -21,7 +21,7 @@ form.addEventListener("submit", async (event) => {
 
   const question = questionInput.value.trim();
 
-  if (question === "") {
+  if (!question) {
     return;
   }
 
@@ -47,7 +47,7 @@ form.addEventListener("submit", async (event) => {
 
     if (!response.ok) {
       addMessage(
-        data.error || "Something went wrong. Please try again.",
+        data.error || "The AI service returned an error.",
         "bot"
       );
       return;

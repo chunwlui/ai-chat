@@ -18,18 +18,23 @@
       </div>
     </div>
 
-    <form id="chatForm" class="chat-form">
-      <input
-        id="question"
-        type="text"
-        placeholder="Type your question here..."
-        maxlength="500"
-        required
-      >
-      <button type="submit">Send</button>
-      <button id="clearChat" type="button">Clear chat</button>
+    <div class="chat-controls">
+  <form id="chatForm" class="chat-form">
+    <input
+      id="question"
+      type="text"
+      placeholder="Type your question here..."
+      maxlength="500"
+      required
+    >
+    <button type="submit">Send</button>
+  </form>
 
-    </form>
+  <button id="clearChat" type="button" class="clear-button">
+    Clear chat
+  </button>
+</div>
+
   </main>
 
   <script src="app.js"></script>

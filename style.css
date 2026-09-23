@@ -48,7 +48,9 @@ h1 {
   max-width: 80%;
   padding: 12px 14px;
   border-radius: 12px;
-  line-height: 1.45;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .bot {
